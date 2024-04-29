@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Booking Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Patient Id</th>
+        <th>Patient Contact </th>
+        <th>Appointment Date</th>
+        <th>Category</th>
+        <th>Upload</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in a %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.pid}}</td>
+        <td>{{i.phno}}</td>
+        <td>{{i.lbdate}}</td>
+        <td>{{i.category}}</td>
+        
+        <td>
+          <form action="/uploadresult/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{i.id}}">
+            <button type="submit"> Upload </button>
+          </form>
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

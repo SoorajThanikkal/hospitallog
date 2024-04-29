@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Bookings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Bookings Details</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Doctor ID</th>
+          <th>Doctor Name</th> -->
+          <!-- <th>Doctor Phone Number</th> -->
+          <!-- <th>Doctor Department</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in l %}
+        <tr>
+          <td>{{ booking.pid }}</td>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.phno }}</td>
+          <td>{{ booking.did }}</td>
+          <td>{{ booking.dname }}</td> -->
+          <!-- <td>{{ booking.dphn }}</td> -->
+          <!-- <td>{{ booking.ddep }}</td>
+          <td>{{ booking.fee }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Bookings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    th {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Bookings Details</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Doctor ID</th>
+          <th>Doctor Name</th>
+          <th>Doctor Department</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in l %}
+        <tr>
+          <td>{{ booking.pid }}</td>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.phno }}</td>
+          <td>{{ booking.did }}</td>
+          <td>{{ booking.dname }}</td>
+          <td>{{ booking.ddep }}</td>
+          <td>{{ booking.fee }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
+
+
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Bookings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    th {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Bookings Details</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">Patient ID</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Phone Number</th>
+            <th class="text-center">Doctor ID</th>
+            <th class="text-center">Doctor Name</th>
+            <th class="text-center">Doctor Department</th>
+            <th class="text-center">Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in l %}
+          <tr>
+            <td class="text-center">{{ booking.pid }}</td>
+            <td class="text-center">{{ booking.name }}</td>
+            <td class="text-center">{{ booking.phno }}</td>
+            <td class="text-center">{{ booking.did }}</td>
+            <td class="text-center">{{ booking.dname }}</td>
+            <td class="text-center">{{ booking.ddep }}</td>
+            <td class="text-center">{{ booking.fee }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

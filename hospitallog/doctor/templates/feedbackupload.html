@@ -1,0 +1,60 @@
+<!-- feedbackupload.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Upload</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Internal CSS for additional styling */
+        .container {
+            margin-top: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Feedback</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="reviews">Reviews</label>
+                    <textarea class="form-control" id="reviews" name="reviews" rows="3" required></textarea>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tags" id="positive" value="positive" checked>
+                        <label class="form-check-label" for="positive">
+                            Positive
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tags" id="negative" value="negative">
+                        <label class="form-check-label" for="negative">
+                            Negative
+                        </label>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <label for="doctor">Doctor</label>
+                    <select class="form-control" id="doctor" name="doctor">
+                        {% for doctor in doctors %}
+                            <option value="{{ doctor.id }}">{{ doctor.dname }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

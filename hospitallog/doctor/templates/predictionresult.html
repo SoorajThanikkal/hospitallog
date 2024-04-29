@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Bar Chart</title>
+</head>
+<body>
+    <p>The best Doctor in the {{ dept_name }} Department</p>
+    <p>Doctors in the {{ dept_name }}</p>
+    <ul>
+        {% for doctor in alldoc %}
+            <li>{{ doctor }}</li>
+        {% endfor %}
+    </ul>
+    <h4>{{ result }}</h4>
+    <h4>Best Doctor:{{ doc }}</h4>
+    
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <a href="/indexp/">Back to Home</a>
+
+  
+   
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Bar Chart</title>
+    <style>
+        .centered-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff; /* Text color */
+            background-color: #007bff; /* Background color */
+            padding: 20px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .back-to-home {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-text">
+        <h4>{{ result }}</h4>
+        <h4>Best Doctor: {{ doc }}</h4>
+    </div>
+    
+    <p>The best Doctor in the {{ dept_name }} Department</p>
+    <p>Doctors in the {{ dept_name }}</p>
+    <ul>
+        {% for doctor in alldoc %}
+            <li>{{ doctor }}</li>
+        {% endfor %}
+    </ul>
+    
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <a href="/indexp/" class="back-to-home">Back to Home</a>
+</body>
+</html>

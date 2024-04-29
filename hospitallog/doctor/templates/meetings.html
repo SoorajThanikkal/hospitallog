@@ -1,0 +1,91 @@
+<html>
+
+    <head>
+        <style>
+        #root {
+            width: 100vw;
+            height: 100vh;
+            }
+    </style>
+    </head>
+
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+    <script>
+        window.onload = function () {
+            function getUrlParams(url) {
+                let urlStr = url.split('?')[1];
+                const urlSearchParams = new URLSearchParams(urlStr);
+                const result = Object.fromEntries(urlSearchParams.entries());
+                return result;
+            }
+
+            const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
+            const userID = Math.floor(Math.random() * 10000) + "";
+            const userName = "{{ name }}";
+            const appID = 1893129879;
+            const serverSecret = "c34dec94ba0034e16bfa5025ab8f8bd7";
+            const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
+
+            const zp = ZegoUIKitPrebuilt.create(kitToken);
+            zp.joinRoom({
+                container: document.querySelector("#root"),
+                sharedLinks: [{
+                    name: 'Personal link',
+                    url: window.location.protocol + '//' + window.location.host + window.location.pathname + '?roomID=' + roomID,
+                }],
+                scenario: {
+                    mode: ZegoUIKitPrebuilt.VideoConference,
+                },
+
+                turnOnMicrophoneWhenJoining: false,
+                turnOnCameraWhenJoining: false,
+                showMyCameraToggleButton: true,
+                showMyMicrophoneToggleButton: true,
+                showAudioVideoSettingsButton: true,
+                showScreenSharingButton: true,
+                showTextChat: true,
+                showUserList: true,
+                maxUsers: 50,
+                layout: "Grid",
+                showLayoutButton: true,
+            });
+
+            const userEmail = "{{ email }}";
+
+            const requestData = {
+                email: userEmail,
+                room_id: roomID,
+                url: `${window.location.protocol}//${window.location.host}${window.location.pathname}?roomID=${roomID}`
+                
+            };
+            
+            console.log(requestData); // Log the requestData object to verify its contents
+
+            
+            // Make an AJAX request to send the room ID to the user via email
+            fetch('/send-room-id/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Room ID sent successfully');
+                } else {
+                    console.error('Failed to send room ID');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+</html> 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Booking Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+          <div class="col-lg-7 px-5 text-start">
+            <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+              <a href="/labresult/">
+                <input type="submit" value="Results" ></td>
+              </a>
+            </div>
+          </div>  
+        </div>
+      </div>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Appointment Date</th>
+        <th>time</th>
+        <th>price</th>
+        <th>Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in a %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.lbdate}}</td>
+        <td>{{i.time}}</td>
+        <td>{{i.price}}</td>
+        <td>
+          <a href="/payment1/">
+          <input type="submit" value="Pay Now" ></td>
+        </a>
+        <td>
+          
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        .wrapper {
+          text-align: center;
+            background-color: #fe5d37;
+            padding: 50px; /* Increased padding */
+            border-radius: 20px; /* Increased border radius */
+            box-shadow: -5px -5px 15px #ffffff, 5px 5px 15px #d9d9d9;
+            color: #fff;
+            width: 50%; /* Set width as per your requirement */
+            max-width: 600px; /* Maximum width */
+        }
+        .attractive-button {
+          background-color: #4187e3; /* Blue background */
+            border: none;
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 5px; /* Rounded corners */
+            transition-duration: 0.4s; /* Smooth transition */
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.attractive-button:hover {
+  background-color: #4225d4; /* Darker blue on hover */
+  color: rgb(235, 236, 243); /* White text on hover */
+}
+        /* Other styles remain the same */
+        /* ... */
+
+        /* Adding colors to social icons */
+        .social-icons a.fb i {
+            color: #fff;
+        }
+        .social-icons a.twitter i {
+            color: #fff;
+        }
+        .social-icons a.insta i {
+            color: #fff;
+        }
+        .social-icons a.yt i {
+            color: #fff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-area">
+      <!-- <div class="inner-area">
+        <img src="{% static '/img/Sudeer.jpeg' %}" alt="">
+      </div> -->
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name"> <img src="{{ dimage.url }}" > </div>  
+    <div class="name">Name:  {{dname}}</div>
+    <div class="about">Id:  {{did}}</div>
+    <div class="about">Department:  {{ddep}}</div>
+    <div class="about">Phone: {{dphn}}</div>
+    <div class="about">Email: {{demail}}</div>
+    <div class="about">Fee: {{fee}}</div>
+    <div class="about">Password:  {{dpass}}</div>
+    
+  </div>
+</body>
+</html>

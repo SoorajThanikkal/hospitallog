@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lab Insert</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #a9ad91; /* Adjust the color code as per your preference */
+          }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 align="center">K's Laboratory</h2>
+  <br>
+  <p align="center">Welcome to our hospital laboratory, From routine blood work to advanced molecular analyses, we strive for excellence in every test we perform, ensuring timely and reliable results for our patients. With a commitment to innovation and patient-centered service, we are proud to be your trusted partner in health and wellness.</p>            
+  <br>
+  <br>
+ 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Contact</th>
+        <th>Book</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in a %}
+      <tr>
+        <td>{{i.category}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.time}}</td>
+        <td>{{i.contact}}</td>
+        <td><form action="/booklab/" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{i.id}}">
+          <button type="submit"> Book </button>
+        </form></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+</body>
+</html>
+

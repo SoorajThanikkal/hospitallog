@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 10px; /* Adjust as needed */
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Doctors List</h2>
+
+<div class="card-wrapper"> 
+    {% for i in a %}
+      <div class="card">
+        <img src="/media/{{i.dimage}}" height="230px" width="300px" alt="Denim Jeans">
+        <h1>{{i.dname}}</h1>
+        <p>{{i.ddep}}</p>
+        <p>Phone: {{i.dphn}}</p>
+        <p>{{i.fee}}</p>
+        <form action="/book/" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{i.id}}">
+          <button type="submit"> Book Now </button>
+        </form>
+      </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #add0e7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            background-color: #b4d3e7;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(350px); /* 1cm = 37.79527559 pixels */
+        }
+
+        .form header {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <header>Lab Booking Details</header>
+            <form action="/bookinglab/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Patient Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Patient name" value="{{ name }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="pid">Patient ID:</label>
+                  <input type="text" name="pid" id="pid" placeholder="Patient Id" value="{{ pid }}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="phno">Patient Contact:</label>
+                  <input type="text" name="phno" id="phno" placeholder="Phone" value="{{ phno }}" required>
+              </div>
+              <div class="form-group">
+                  <label for="dname">Category:</label>
+                  <input type="text" name="category" id="category" placeholder="category" value="{{ category }}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="dphn">Amount:</label>
+                  <input type="text" name="price" id="price" placeholder="price" value= "{{ price }}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="did">Description:</label>
+                  <input type="textbox" name="description" id="description" placeholder="description" value="{{ description }}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="ddep">Time:</label>
+                  <input type="text" name="time" id="time" placeholder="time" value="{{ time }}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="bdate">Appointment Date:</label>
+                  <input type="date" name="lbdate" id="lbdate" placeholder="Appointment Date" required>
+              </div>
+                <div class="form-group">
+                
+                        <input type="submit" value="Book Now" >
+            
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

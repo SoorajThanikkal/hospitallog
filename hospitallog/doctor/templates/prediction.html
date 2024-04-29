@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Prediction</title>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+        }
+
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Doctor Prediction</h1>
+    <form id="predictionForm" method="post" onsubmit="showLoader()">
+        {% csrf_token %}
+        <input type="text" name="department_name" id="department_name">
+        <input type="submit" value="Predict">
+    </form>
+    <div id="loader" style="display: none;">
+        <p>Loading...</p>
+    </div>
+    <div id="result" style="display: none;">
+        <p>{{ result }}</p>
+        <h1>hi</h1>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #loader, #result {
+            text-align: center;
+            display: none;
+            margin-top: 20px;
+        }
+        #departmentBox {
+            margin-top: 20px;
+            margin-bottom: 20px; /* Added margin bottom */
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px; /* Adjusted width */
+            max-width: 100%; /* To make sure it doesn't overflow */
+        }
+        #departmentBox h2 {
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+        }
+
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        }
+
+        // Function to display department names below the button
+        function displayDepartments() {
+            var departments = ['Dermatology', 'Psychiatry']; // Replace with your department names
+            var departmentBox = document.getElementById('departmentBox');
+            departmentBox.innerHTML = '<h2>Departments</h2>'; // Set the heading
+            departments.forEach(function(department) {
+                var departmentElement = document.createElement('p');
+                departmentElement.textContent = department;
+                departmentBox.appendChild(departmentElement);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Doctor Prediction</h1>
+    
+
+    <form id="predictionForm" method="post" onsubmit="showLoader()">
+        {% csrf_token %}
+        <input type="text" name="department_name" id="department_name" placeholder="Enter department name">
+        <input type="submit" value="Predict">
+    </form>
+
+
+
+    <div id="loader">
+        <p>Loading...</p>
+    </div>
+    <div id="result">
+        <p>{{ result }}</p>
+        <h1>hi</h1>
+    </div>
+    <div id="departmentBox"></div> <!-- Container for department names -->
+    <script>
+        // Call the function to display department names when the page loads
+        displayDepartments();
+    </script>
+</body>
+</html>

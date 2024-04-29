@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <style>
+          body {
+              font-family: 'Arial', sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f5f1ee;
+          }
+          h2 {
+              text-align: center;
+              color: #08010c;
+              margin-top: 30px;
+          }
+          form {
+              width: 60%;
+              margin: 0 auto;
+              padding: 40px;
+              background-color: #4225d4;
+              border-radius: 8px;
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          }
+          input[type="text"] {
+              width: calc(100% - 18px);
+              padding: 12px;
+              margin-bottom: 20px;
+              border-radius: 6px;
+              border: 1px solid #300226;
+              box-sizing: border-box;
+              transition: border-color 0.3s ease-in-out;
+          }
+          input[type="text"]:focus {
+              outline: none;
+              border-color: #ebc414;
+              box-shadow: 0 0 8px rgba(242, 250, 12, 0.901);
+          }
+          .attractive-button {
+    background-color: #468ae8; /* Blue background */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px; /* Rounded corners */
+    transition-duration: 0.4s; /* Smooth transition */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(165, 62, 62, 0.1); /* Shadow effect */
+  }
+  
+  .attractive-button:hover {
+    background-color: #4225d4; /* Darker blue on hover */
+    color: rgb(235, 236, 243); /* White text on hover */
+  }
+      </style>
+      <title>Document</title>
+  </head>
+  <body>
+      <h2>UPDATE  PROFILE</h2>
+      <form name="form1" action="/proupdate/" method="post">
+          {% csrf_token %}
+          <!-- ID:<input type="text" name="id" value="{{id}}" readonly><br> -->
+          Name:<input type="text" name="email" value="{{name}}"><br>
+          Patient Id:<input type="text" name="pid" value="{{pid}}" readonly><br>
+          Password:<input type="text" name="psw" value="{{psw}}"><br>
+          Phone<input type="text" name="phno" value="{{phno}}">
+          <input type="submit" class="attractive-button" value="UPDATE">
+      </form>
+  </body>
+  </html>
+  
+</body>
+</html>
+

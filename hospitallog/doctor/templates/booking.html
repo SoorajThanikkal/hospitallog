@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Payment Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Include Razorpay script -->
+  
+</head>
+<body>
+
+<div class="container">
+  <h2>Payment Details</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Patient ID</th>
+        <th>Amount</th>
+        <th>Doctor Name</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ booking.patient.name }}</td>
+        <td>{{ booking.patient.pid }}</td>
+        <td>{{ booking.doctor.fee }}</td>
+        <td>{{ booking.doctor.dname }}</td>
+        <td>{{ booking.date }}</td>
+        <td>{{ booking.time }}</td>
+        <td>{{ booking.is_paid }}</td>
+        <td>
+          {% if not booking.is_paid %}
+          <!-- Add onclick event to call Razorpay payment function -->
+          <button onclick="payNow('{{ booking.id }}', '{{ booking.doctor.fee }}')">Pay Now</button>
+          {% else %}
+          Paid
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    // Function to initiate payment with Razorpay
+    var RAZOR_KEY_ID = "{{ razorpay_merchant_key }}";
+    var ORDER_ID = "{{ razorpay_order_id }}";
+    
+    function payNow(bookingId, amount) {
+        var options = {
+            "key": RAZOR_KEY_ID,
+            "amount": amount * 100, // Amount in paise
+            "currency": "INR",
+            "name": "Your Hospital Name",
+            "description": "Payment for Booking",
+            "order_id": ORDER_ID, // Pass the dynamically generated order ID
+            "handler": function (response) {
+                // On success, update payment status in backend
+                $.post('/update_payment/', { booking_id: bookingId, payment_id: response.razorpay_payment_id }, function(data) {
+                    if (data.success) {
+                        alert('Payment successful');
+                        // Optionally, redirect to a success page
+                        window.location.href = '/payment_success/';
+                    } else {
+                        alert('Payment failed');
+                    }
+                });
+            },
+            "prefill": {
+                "name": "Patient Name",
+                "email": "patient@example.com"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+    }
+    </script>
+    
+    </body>
+    </html>
+
+</body>
+</html>

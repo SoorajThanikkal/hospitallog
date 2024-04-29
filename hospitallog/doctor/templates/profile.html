@@ -1,0 +1,216 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        .wrapper {
+            text-align: center;
+            background-color: #fe5d37;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: -5px -5px 15px #ffffff, 5px 5px 15px #d9d9d9;
+            color: #fff;
+        }
+        .attractive-button {
+  background-color: #4187e3; /* Blue background */
+  border: none;
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px; /* Rounded corners */
+  transition-duration: 0.4s; /* Smooth transition */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.attractive-button:hover {
+  background-color: #4225d4; /* Darker blue on hover */
+  color: rgb(235, 236, 243); /* White text on hover */
+}
+        /* Other styles remain the same */
+        /* ... */
+
+        /* Adding colors to social icons */
+        .social-icons a.fb i {
+            color: #fff;
+        }
+        .social-icons a.twitter i {
+            color: #fff;
+        }
+        .social-icons a.insta i {
+            color: #fff;
+        }
+        .social-icons a.yt i {
+            color: #fff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>updateprofile</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-area">
+      <div class="inner-area">
+        <img src="{% static '/img/profile.jpg' %}" alt="">
+      </div>
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name">Name:  {{name}}</div>
+    <div class="about">Id:  {{pid}}</div>
+    <div class="about">Phone: {{phno}}</div>
+    <div class="about">Password:  {{passw}}</div>
+    <div class="social-icons">
+      <form action="/update/" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="attractive-button" value="UPDATE">
+      </form>
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff5252, #33ccff);
+        }
+
+        .wrapper {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            color: #333;
+            position: relative;
+            max-width: 400px;
+            margin: 20px; /* Increased margin */
+        }
+
+        .img-area {
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            border: 2px solid #333; /* Added border style */
+        }
+
+        .img-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .icon {
+            position: absolute;
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow {
+            top: 10px;
+            left: 10px;
+        }
+
+        .dots {
+            top: 10px;
+            right: 10px;
+        }
+
+        .arrow:hover,
+        .dots:hover {
+            transform: scale(1.2);
+        }
+
+        .name {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .about {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .attractive-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px; /* Adjusted padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .attractive-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>updateprofile</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-area">
+      <img src="{% static '/img/profile.jpg' %}" alt="">
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name">Name:  {{name}}</div>
+    <div class="about">Id:  {{pid}}</div>
+    <div class="about">Phone: {{phno}}</div>
+    <div class="about">Password:  {{passw}}</div>
+    <div class="social-icons">
+      <form action="/update/" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="attractive-button" value="UPDATE">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+
