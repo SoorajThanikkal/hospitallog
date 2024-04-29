@@ -1,8 +1,8 @@
 {
     "builds": [{
         "src": "hospitallog/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
+        "use": "@ardnt/vercel-python-wsgi",
+        "config": { "maxLambdaSize": "15mb" }
     }],
     "routes": [
         {
