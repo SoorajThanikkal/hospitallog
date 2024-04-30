@@ -780,7 +780,7 @@ def send_room_id(request):
 def DoctorPredictView(request):
     result = None
    
-
+    nltk.download('stopwords')
     if request.method == 'POST':
         department_name=request.POST.get('department_name')
         tweets.reviews = tweets.reviews.str.replace('[#,@,&]', '')
