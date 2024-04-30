@@ -794,7 +794,7 @@ def DoctorPredictView(request):
         tweets.reviews = tweets.reviews.str.replace('\s+', ' ')
         #remove all single characters
         tweets.reviews = tweets.reviews.str.replace(r'\s+[a-zA-Z]\s+', '')
-        nltk.download('all')
+        nltk.download('punkt')
         stop_words = stopwords.words('english')
         stop_words.extend(['ha', 'wa', '-'])
 
