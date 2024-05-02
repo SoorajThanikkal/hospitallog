@@ -740,7 +740,7 @@ def meetingView(request,pid):
             users = pay.objects.filter(pid=uid)
             if users.exists():  # Check if any objects are returned
                 user = users.first()  # Get the first object from the queryset
-                name = user.dname
+                name = user.name
                 email = user.email
                 return render(request, 'meetings.html', {'name': name, 'email': email})
             else:
