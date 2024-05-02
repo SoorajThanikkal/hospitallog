@@ -728,19 +728,23 @@ def meetingView(request,pid):
         uid= pid
         try:
             user = pay.objects.filter(did=did)
-            name = user.dname
-            email = user.email
-            print(name)
+            if user.exists():  # Check if any objects are returned
+                usern = user.first()  # Get the first object from the queryset
+                name = usern.dname
+                email = usern.email
+                print(name)
             return render(request,'meetings.html',{'name':name, 'email':email})
         except :
-            
             print(uid)
-            user= pay.objects.get(pid=uid)
-            name = user.dname
-            email = user.email
-            return render(request,'meetings.html',{'name':name, 'email':email})
-    else:
-        return HttpResponse('error')
+            users = pay.objects.filter(pid=uid)
+            if users.exists():  # Check if any objects are returned
+                user = users.first()  # Get the first object from the queryset
+                name = user.dname
+                email = user.email
+                return render(request, 'meetings.html', {'name': name, 'email': email})
+            else:
+                return HttpResponse('error')
+    return HttpResponse('error')
     
 @csrf_exempt      
 def send_room_id(request):
