@@ -724,9 +724,10 @@ def bookedView(request):
     
 def meetingView(request,pid):
     if 'did' or 'pid' in request.session:
-        did = request.session['did'] 
+       
         uid= pid
         try:
+            did = request.session['did'] 
             user = pay.objects.filter(did=did)
             if user.exists():  # Check if any objects are returned
                 usern = user.first()  # Get the first object from the queryset
