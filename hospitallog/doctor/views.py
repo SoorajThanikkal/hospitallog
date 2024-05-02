@@ -722,10 +722,10 @@ def bookedView(request):
         return redirect('login')
     
     
-def meetingView(request):
+def meetingView(request,pid):
     if 'did' or 'pid' in request.session:
         did = request.session['did'] 
-        uid= request.session['pid']
+        uid= pid
         try:
             user = pay.objects.filter(did=did)
             name = user.dname
