@@ -727,7 +727,7 @@ def meetingView(request):
         did = request.session['did'] 
         uid= request.session['pid']
         try:
-            user = pay.objects.get(did=did)
+            user = pay.objects.filter(did=did)
             name = user.dname
             email = user.email
             print(name)
