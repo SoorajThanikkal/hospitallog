@@ -204,10 +204,10 @@
     <div class="about">Phone: {{phno}}</div>
     <div class="about">Password:  {{passw}}</div>
     <div class="social-icons">
-      <form action="/update/" method="POST">
+      {% comment %} <form action="/update/" method="POST">
         {% csrf_token %}
         <input type="submit" class="attractive-button" value="UPDATE">
-      </form>
+      </form> {% endcomment %}
     </div>
   </div>
 </body>
