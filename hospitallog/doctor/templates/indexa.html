@@ -59,7 +59,7 @@
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>0987654321</small>
+                    <small>09xxxx 8xxx1</small>
                 </div>
                 
             </div>
@@ -71,37 +71,524 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>K's Multispeciality Hospital</h1>
+            <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>Expert Doctor Recommendation System</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <!-- <a href="index.html" class="nav-item nav-link active">Home</a> -->
                 <!-- <a href="/adminlist/" class="dropdown-item">Patient</a> -->
                 <!-- <a href="/adminlist/" class="nav-item nav-link">List Users</a> -->
                 <!-- <a href="/login/" class="nav-item nav-link">Patient</a>  -->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Lists</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="/alistusers/" class="dropdown-item">Users</a>
+                        <a href="/alistusers/" class="dropdown-item">Patients</a>
                         <a href="/alistdoctors/" class="dropdown-item">Doctors</a>
-                        <a href="/alistlab/" class="dropdown-item">Laboratory</a>
+                        <!-- <a href="/alistlab/" class="dropdown-item">Laboratory</a> -->
                         <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         <a href="404.html" class="dropdown-item">404 Page</a> -->
                     </div>
                 </div>
-                <a href="/" class="nav-item nav-link">Logout</a> 
+                <a href="/index/" class="nav-item nav-link">Logout</a> 
             </div>
             <!-- <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>
     <!-- Navbar End -->
 
-
     <!-- Header Start -->
     <div class="container-fluid header bg-primary p-0 mb-5">
+        <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Happiness</h1>
+                <div class="row g-4">
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">8</h2>
+                            <p class="text-light mb-0">Expert Doctors</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">368</h2>
+                            <p class="text-light mb-0">Medical Stuff</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">782</h2>
+                            <p class="text-light mb-0">Total Patients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{% static 'img/carousel-1.jpg'%}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Dermatology</h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{% static 'img/carousel-2.jpg'%}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Psychiatry</h1>
+                        </div>
+                    </div>
+                    <!-- <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{% static 'img/carousel-3.jpg'%}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Psychiatry</h1>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="{% static 'img/about-1.jpg'%}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{% static 'img/about-2.jpg'%}" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
+                    <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
+                    <p>In our System, we believe in harnessing the power of cutting-edge technology to deliver outstanding healthcare. Our facilities are equipped with the latest in medical equipment and diagnostic tools, enabling us to provide precise and efficient treatments. But technology is just a part of the equation - our true strength lies in our team of highly skilled and passionate doctors, nurses, and specialists. We combine innovation with human touch to offer a level of care that's not only effective but also personalized to your needs.</p>
+                    <!-- <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p> -->
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="login.html">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+       <!-- Service Start -->
+       <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
+                <h1>Health Care Solutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Dermatology</h4>
+                        <p class="mb-4">Our Dermatology Department, where skin health and beauty converge through expert care and personalized treatment plans. Our team of board-certified dermatologists specializes in diagnosing and treating a wide range of skin conditions, from acne and eczema to skin cancer and complex dermatological disorders. Using advanced diagnostic techniques and the latest therapeutic modalities, we provide comprehensive care tailored to each patient's unique needs and concerns. Whether you're seeking medical treatment for a skin condition, cosmetic procedures to enhance your appearance, or preventive care to maintain healthy skin, our compassionate and skilled dermatologists are here to help. With a focus on patient education, empowerment, and satisfaction, we strive to deliver the highest quality dermatological care in a welcoming and supportive environment. Trust us to partner with you in achieving healthy, radiant skin that you can feel confident in every day.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Psychiatry</h4>
+                        <p class="mb-4">Discover compassionate care and personalized treatment plans at our Psychiatry Department. Our experienced team is here to support you on your journey to mental wellness. Whether you're facing depression, anxiety, or other challenges, we're dedicated to helping you thrive.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Neurology</h4>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-wheelchair text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Orthopedics</h4>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-tooth text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Dental Surgery</h4>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-vials text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Laboratory</h4>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p>
+                        <h1 class="text-white mb-4">Why Choose Us</h1>
+                        <p class="text-white mb-4 pb-2">The higher the reputation of the medical institution, the greater the chances of attracting a maximum of clients (patients) and convincing them to choose your clinic. There are many ways to do this, and one of them is an online promotion (the so-called marketing of hospital services). Especially as most of us have long preferred Internet methods for finding information of any kind.
+
+                            However, don’t forget that a medical web resource is not the same as an entertainment one. In this case, it's about people's health, and you have no right to make a mistake. The hospital website development requires a delicate approach... Let's discuss it in more detail!</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-user-md text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Experience</p>
+                                        <h5 class="text-white mb-0">Doctors</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-check text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Quality</p>
+                                        <h5 class="text-white mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-comment-medical text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Positive</p>
+                                        <h5 class="text-white mb-0">Consultation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-headphones text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">24 Hours</p>
+                                        <h5 class="text-white mb-0">Support</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/feature.jpg'%}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
+                <h1>Our Experience Doctors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/Sudeer.jpeg'%}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Raj Singhania</h5>
+                            <p class="text-primary">Psychiatry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/anna.jpeg'%}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Ananya Sharma</h5>
+                            <p class="text-primary">Dermatology</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/xavier.jpeg'%}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Arjun Desai</h5>
+                            <p class="text-primary">Dermatology</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/mariya.jpeg'%}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Anjali Gupta</h5>
+                            <p class="text-primary">Psychiatry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Appointment Start -->
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5"> -->
+                <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+012 345 6789</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-0">info@example.com</h5>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5"> -->
+                        <!-- <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Choose Department</option>
+                                        <option value="1">Dermatology</option>
+                                        <option value="2">Psychiatry & Neurology</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Choose Doctor</option>
+                                        <option value="1">Dr. Ananya Sharma</option>
+                                        <option value="2">Dr. Ananya Sharma</option>
+                                        <option value="3">Dr. Priya Reddy</option>
+                                        <option value="4">Dr. Arjun Desai</option>
+                                        <option value="5">Dr. Nandini Kapoor</option>
+                                        <option value="6">Dr. Vikram Mehta</option>
+                                        <option value="7">Dr. Anjali Gupta</option>
+                                        <option value="8">Dr. Raj Singhania</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choose Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" rows="5" placeholder="Describe your problem"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                                </div>
+                            </div>
+                        </form> -->
+                    <!-- </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Appointment End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+                <h1>What Say Our Patients!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{% static 'img/testimonial-1.jpg'%}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>I thought it was terrific but the right up into the incorrect terms of suggesting that I had already had plastic surgery. Now i am facing tan issues. when I met Dr. Priya Reddy reagarding this and I had asked for a prescription to cure it, she describes the situation which an acid reflux on my cosmetcs and it should avoid.</p>
+                        <h5 class="mb-1">Monica Jerome</h5>
+                        <span class="fst-italic">Solictor</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{% static 'img/testimonial-2.jpg'%}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>I am a Computer Engineer working for an MNC for long hours daily, which is actually a stressful. Dr. Anjali Gupta counselled on how to overcome this from happening again. I have now referred to some of my colleagues who are getting thier treatments.</p>
+                        <h5 class="mb-1">Deon C Cillian</h5>
+                        <span class="fst-italic">Software Developer</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{% static 'img/testimonial-3.jpg'%}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Thanks to Dr Rohit Patel! He ‘s a very good person and best professional. He suggest some lotion for my skin allergies. I’ ll be eternally grateful with this nice person.</p>
+                        <h5 class="mb-1">Harvey Specter</h5>
+                        <span class="fst-italic">Consultant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Kochi, INDIA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+xx xxxxx xxxxx</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>____@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="">Dermatology</a>
+                    <a class="btn btn-link" href="">Psychiatry</a>
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <!-- <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>  -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js'%}"></script>
+    <script src="{% static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js'%}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js'%}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>
+
+
+    <!-- Header Start -->
+    <!-- <div class="container-fluid header bg-primary p-0 mb-5">
         <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
             <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
                 <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Happiness</h1>
@@ -149,12 +636,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Header End -->
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
@@ -166,21 +653,21 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
                     <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
-                    <p>At K's Multispecialty Hospital, we believe in harnessing the power of cutting-edge technology to deliver outstanding healthcare. Our facilities are equipped with the latest in medical equipment and diagnostic tools, enabling us to provide precise and efficient treatments. But technology is just a part of the equation - our true strength lies in our team of highly skilled and passionate doctors, nurses, and specialists. We combine innovation with human touch to offer a level of care that's not only effective but also personalized to your needs.</p>
+                    <p>At K's Multispecialty Hospital, we believe in harnessing the power of cutting-edge technology to deliver outstanding healthcare. Our facilities are equipped with the latest in medical equipment and diagnostic tools, enabling us to provide precise and efficient treatments. But technology is just a part of the equation - our true strength lies in our team of highly skilled and passionate doctors, nurses, and specialists. We combine innovation with human touch to offer a level of care that's not only effective but also personalized to your needs.</p> -->
                     <!-- <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p> -->
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
+                    <!-- <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
                     <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
                     <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
                     <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="login.html">Read More</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- About End -->
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
@@ -249,12 +736,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Service End -->
 
 
     <!-- Feature Start -->
-    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+    <!-- <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
         <div class="container feature px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -317,12 +804,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Feature End -->
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
@@ -395,12 +882,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
     <!-- Appointment Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -427,7 +914,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5"> -->
                         <!-- <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
@@ -469,16 +956,16 @@
                                 </div>
                             </div>
                         </form> -->
-                    </div>
+                    <!-- </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Appointment End -->
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
@@ -511,12 +998,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Testimonial End -->
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -534,11 +1021,11 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Services</h5>
                     <a class="btn btn-link" href="">Dermatology</a>
-                    <a class="btn btn-link" href="">Psychiatry</a>
+                    <a class="btn btn-link" href="">Psychiatry</a> -->
                     <!-- <a class="btn btn-link" href="">Neurology</a>
                     <a class="btn btn-link" href="">Orthopedics</a>
                     <a class="btn btn-link" href="">Laboratory</a> -->
-                </div>
+                <!-- </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="">About Us</a>
@@ -563,23 +1050,23 @@
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
+                    <div class="col-md-6 text-center text-md-end"> -->
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a> -->
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'lib/wow/wow.min.js'%}"></script>
     <script src="{% static 'lib/easing/easing.min.js'%}"></script>
@@ -588,10 +1075,10 @@
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
     <script src="{% static 'lib/tempusdominus/js/moment.min.js'%}"></script>
     <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js'%}"></script>
-    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script> -->
 
     <!-- Template Javascript -->
-    <script src="{% static 'js/main.js'%}"></script>
+    <!-- <script src="{% static 'js/main.js'%}"></script>
 </body>
 
-</html>
+</html> -->
