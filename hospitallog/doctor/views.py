@@ -64,6 +64,9 @@ def contact(request):
 def feature(request):
     return render(request,'feature.html')
 
+def pay_success(request):
+    return render(request,'pay_success.html')
+
 def register(request):
     if request.method=="POST" :
         name = request.POST.get('name')
