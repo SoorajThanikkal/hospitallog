@@ -480,7 +480,7 @@ def paymenthandler(request):
                     razorpay_client.payment.capture(payment_id, amount)
  
                     # render success page on successful caputre of payment
-                    return render(request, 'pay_success.html')
+                    return redirect('pay_success')
                 except:
  
                     # if there is an error while capturing payment.
@@ -525,7 +525,7 @@ def paymenthandler1(request):
                     razorpay_client.payment.capture(payment_id, amount)
  
                     # render success page on successful caputre of payment
-                    return render(request, 'pay_success.html')
+                    return redirect('pay_success')
                 except:
  
                     # if there is an error while capturing payment.
@@ -613,7 +613,7 @@ def paymenthandler1(request):
                     razorpay_client.payment.capture(payment_id, amount)
                                         
                     # render success page on successful caputre of payment
-                    return render(request, 'pay_success.html')
+                    return redirect('pay_success')
                 except:
  
                     # if there is an error while capturing payment.

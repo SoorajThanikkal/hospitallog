@@ -64,6 +64,7 @@ urlpatterns = [
     path('send-room-id/',views.send_room_id, name = 'send-room-id'),
     path('predict/',views.DoctorPredictView,name='predict'),
     path('prediction_results/',views.PredictionResultView,name='prediction-results'),
-    path('feedback/',views.FeedbackUploadView,name='feedback')
+    path('feedback/',views.FeedbackUploadView,name='feedback'),
+    path('pay_success/',views.pay_success,name='pay_success')
     
 ]
