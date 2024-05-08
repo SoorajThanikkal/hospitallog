@@ -928,7 +928,7 @@ def FeedbackUploadView(request):
             pid = random_number
 
             csv_file_path = os.path.join(settings.BASE_DIR,'dataset','IMAReviewsPrivateDS.csv')
-            with open(csv_file_path, 'r') as csvfile:
+            with open(csv_file_path, 'r', encoding='utf-8', errors='replace') as csvfile:
                 csvreader = csv.reader(csvfile)
                 for row in csvreader:
                     existing_pid = str(row[0]) 
